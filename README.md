@@ -28,9 +28,11 @@
 <br/>
 <h2 align="center">Table of Contents</h2>
 
+
 * [Why use Earthly?](#why-use-earthly)
 * [Where Does Earthly Fit?](#where-does-earthly-fit)
 * [How Does It Work?](#how-does-it-work)
+* [Some definitions regarding documentation](#some-definitions-regarding-documentation)
 * [Installation](#installation)
 * [Quick Start](#quick-start)
 * [Features](#features)
@@ -86,6 +88,47 @@ We use a target-based system to help users break-up complex builds into reusable
 
 <br/>
 <br/>
+<h2 align="center">Some definitions regarding documentation</h2>
+
+###   Earthly
+
+It is the build automation system as a whole
+
+###   earth
+
+It is the CLI tool used to interact with Earthly
+
+###   Earthfile
+
+a file (named literally Earthfile) which contains a series of targets and their respective recipes
+
+###   buildkitd
+
+a daemon built by the Docker team and used by Earthly to execute builds. It executes LLB, the same low-level primitives used when building Dockerfiles. The buildkitd daemon is started automatically in a docker container, by earth, when executing builds.
+
+###   recipe
+
+a specific sequence of build steps
+
+###   target 
+
+the label we use to identify a recipe. 'Target' is also used to refer to a build of a specific target.
+
+###   build context
+
+the main directory made available to the build for copying files from
+
+###   artifact
+
+It is a file resulting from executing a target (not all targets have artifacts)
+
+###   image
+
+It is defined as a docker image resulting from executing a target (not all targets have images)
+
+<br/>
+<br/>
+
 <h2 align="center">Installation</h2>
 
 For a full list of installation options see the [Installation page](https://docs.earthly.dev/installation).
